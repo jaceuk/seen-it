@@ -7,7 +7,7 @@
   export async function load({ fetch, params }: ILoad) {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${params.name}`,
+        `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${params.term}`,
       );
       const data = await res.json();
       if (res.ok) {
