@@ -6,40 +6,40 @@
 
   export async function load({ fetch, params }: ILoad) {
     try {
-      const res = await fetch(
+      const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${params.term}`,
       );
-      const data = await res.json();
-      if (res.ok) {
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
         return {
-          status: 200,
+          status: response.status,
           props: { results: data.results },
         };
       } else {
         return {
-          status: 400,
-          props: { error: data.status_message },
+          status: 500,
         };
       }
     } catch (error) {
       console.error(error);
       return {
         status: 500,
-        props: { error: error },
       };
     }
   }
 </script>
 
 <script lang="ts">
+  import SearchResult from '$components/SearchResult.svelte';
+
   export let results: any;
-  export let error: any;
 </script>
 
-{#if error}
-  <p>{error}</p>
+{#if !results}
+  <p>Error</p>
 {:else}
   {#each results as result}
-    <p>{result.title}</p>
+    <SearchResult>{result.title}</SearchResult>
   {/each}
 {/if}

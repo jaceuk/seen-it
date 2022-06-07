@@ -9,7 +9,7 @@
 </script>
 
 <div class="overlay">
-  <button on:click={handleClose}>Close</button>
+  <button on:click={handleClose}>Back</button>
   <slot />
 </div>
 
@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: var(--color-nearly-black-80);
+    background: rgba(0, 0, 0, 0.6);
     top: 0;
     left: 0;
     right: 0;

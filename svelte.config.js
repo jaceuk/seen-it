@@ -16,11 +16,11 @@ const config = {
       resolve: {
         alias: {
           // these are the aliases and paths to them
-          '@images': path.resolve('./src/images'),
-          '@data': path.resolve('./src/data'),
-          '@components': path.resolve('./src/components'),
-          '@lib': path.resolve('./src/lib'),
-          '@utils': path.resolve('./src/lib/utils'),
+          $images: path.resolve('./src/images'),
+          $data: path.resolve('./src/data'),
+          $components: path.resolve('./src/components'),
+          $lib: path.resolve('./src/lib'),
+          $utils: path.resolve('./src/lib/utils'),
         },
       },
     },

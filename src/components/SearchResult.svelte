@@ -8,7 +8,9 @@
   }
 </script>
 
-<button on:click={handleToggleModal}>overlay</button>
+<div>
+  <button on:click={handleToggleModal}><slot /></button>
+</div>
 
 {#if showModal}
   <Overlay on:close={handleToggleModal}>Overlay content here</Overlay>
