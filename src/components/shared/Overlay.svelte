@@ -18,11 +18,11 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--color-white);
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 300;
     display: flex;
     align-items: center;
     justify-content: center;

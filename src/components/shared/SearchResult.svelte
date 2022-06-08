@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Overlay from '$components/Overlay.svelte';
+  import Overlay from '$components/shared/Overlay.svelte';
 
   let showModal = false;
 

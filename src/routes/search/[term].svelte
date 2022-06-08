@@ -31,7 +31,7 @@
 </script>
 
 <script lang="ts">
-  import SearchResult from '$components/SearchResult.svelte';
+  import SearchResult from '$components/shared/SearchResult.svelte';
 
   export let results: any;
 </script>

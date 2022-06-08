@@ -1,1 +1,1 @@
-<div>Watched</div>
+Watched

@@ -47,5 +47,9 @@
     "*.js": "eslint --cache --fix",
     "*.css": "stylelint --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@fontsource/museomoderno": "^4.5.9",
+    "@fontsource/poppins": "^4.5.8"
   }
 }
