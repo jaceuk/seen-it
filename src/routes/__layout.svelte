@@ -1,7 +1,6 @@
 <script>
-  import Header from '$components/shared/Header.svelte';
-  import Footer from '$components/shared/Footer.svelte';
-  import Main from '$components/shared/Main.svelte';
+  import Header from '$components/Header.svelte';
+  import Footer from '$components/Footer.svelte';
   import '../styles/normalize.css';
   import '../styles/reset.css';
   import '../styles/typography.scss';
@@ -10,7 +9,13 @@
 </script>
 
 <Header />
-<Main>
+<main>
   <slot />
-</Main>
+</main>
 <Footer />
+
+<style>
+  main {
+    padding: var(--size-base) var(--size-base) 72px var(--size-base);
+  }
+</style>
