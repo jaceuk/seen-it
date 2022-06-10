@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Details from '$components/shared/Details.svelte';
+  import Details from '$components/Details.svelte';
 
   let showDetails = false;
 

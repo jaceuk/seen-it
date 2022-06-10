@@ -8,13 +8,21 @@
   import '../styles/vars.css';
 </script>
 
-<Header />
-<main>
-  <slot />
-</main>
-<Footer />
+<div class="wrapper">
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</div>
 
 <style>
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   main {
     padding: var(--size-base) var(--size-base) 72px var(--size-base);
   }

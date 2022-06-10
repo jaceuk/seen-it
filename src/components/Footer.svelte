@@ -32,6 +32,7 @@
     z-index: 200;
     padding: var(--size-small) 0;
     width: 100%;
+    max-width: 900px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
   }
 
