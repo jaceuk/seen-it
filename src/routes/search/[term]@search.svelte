@@ -10,7 +10,6 @@
         `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${params.term}`,
       );
       const data = await response.json();
-      console.log(data);
       if (response.ok) {
         return {
           status: response.status,
@@ -31,15 +30,19 @@
 </script>
 
 <script lang="ts">
-  import SearchResult from '$components/SearchResult.svelte';
+  import CardHorizontal from '$components/CardHorizontal.svelte';
 
   export let results: any;
 </script>
 
+<svelte:head>
+  <title>Search results</title>
+</svelte:head>
+
 {#if !results}
   <p>Error</p>
 {:else}
-  {#each results as result}
-    <SearchResult>{result.title}</SearchResult>
+  {#each results as data}
+    <CardHorizontal {data} />
   {/each}
 {/if}

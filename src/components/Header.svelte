@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import ProfileSVG from '$components/svgs/ProfileSVG.svelte';
+  import SearchButton from '$components/SearchButton.svelte';
 
   let searchTerm: string | undefined;
 
@@ -26,11 +27,9 @@
     </a>
   </div>
 
-  <form on:submit|preventDefault={handleSubmit}>
-    <label for="search">Search</label>
-    <input id="search" type="text" bind:value={searchTerm} />
-    <button type="submit">Search</button>
-  </form>
+  <div class="search">
+    <SearchButton />
+  </div>
 </header>
 
 <style>
@@ -46,7 +45,7 @@
     justify-content: space-between;
   }
 
-  form {
+  .search {
     background-color: var(--color-grey-light);
     padding: var(--size-base);
   }
@@ -54,9 +53,5 @@
   .profile {
     display: flex;
     padding: var(--size-small);
-  }
-
-  label {
-    display: none;
   }
 </style>

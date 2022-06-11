@@ -1,8 +1,10 @@
 <script lang="ts">
-  import placeholder from '$images/placeholder.png';
-  import Details from '$components/Details.svelte';
+  import posterPlaceholder from '$images/posterPlaceholder.png';
+  import DetailsOverlay from '$components/DetailsOverlay.svelte';
 
   export let data: any;
+
+  console.log(data);
 
   let showDetails = false;
 
@@ -14,14 +16,14 @@
 <button class="result" on:click={handleToggleDetails}>
   <img
     class="image"
-    src={data.poster_path ? `https://image.tmdb.org/t/p/w200/${data.poster_path}` : placeholder}
+    src={data.poster_path ? `https://image.tmdb.org/t/p/w154/${data.poster_path}` : posterPlaceholder}
     alt=""
   />
   <div class="title">{data.name || data.title}</div>
 </button>
 
 {#if showDetails}
-  <Details on:close={handleToggleDetails}>Overlay content here</Details>
+  <DetailsOverlay on:close={handleToggleDetails} {data} />
 {/if}
 
 <style>
