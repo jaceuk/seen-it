@@ -1,23 +1,34 @@
 <script lang="ts">
+  export let totalShows: number;
+  export let totalMovies: number;
+
   let selectedTab = 1;
+  let showsTab: any;
+  let moviesTab: any;
+
+  console.log(showsTab);
 </script>
 
 <div role="tablist" aria-orientation="horizontal">
   <button
     on:click={() => (selectedTab = 1)}
+    bind:this={showsTab}
     role="tab"
     aria-selected={selectedTab === 1 ? 'true' : 'false'}
     id="tv-tab"
-    aria-controls="tv-content-panel">TV shows</button
-  >
+    aria-controls="tv-content-panel"
+    ><span>TV shows</span>{#if totalShows}<span class="count">({totalShows})</span>{/if}
+  </button>
+
   <button
     on:click={() => (selectedTab = 2)}
+    bind:this={moviesTab}
     role="tab"
     aria-selected={selectedTab === 2 ? 'true' : 'false'}
     id="movies-tab"
-    aria-controls="movies-content-panel">Movies</button
-  >
-  <span class="underline" />
+    aria-controls="movies-content-panel"
+    ><span>Movies</span>{#if totalMovies}<span class="count">({totalMovies})</span>{/if}
+  </button>
 </div>
 
 {#if selectedTab === 1}
@@ -33,6 +44,10 @@
 {/if}
 
 <style>
+  .count {
+    font-size: var(--font-size-extra-small);
+  }
+
   [role='tablist'] {
     display: flex;
     gap: var(--size-base);
@@ -44,33 +59,15 @@
     background: none;
     border: none;
     padding: 0 0 var(--size-extra-small) 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--size-extra-small);
+    border-bottom: 2px solid var(--color-nearly-black);
   }
 
   button[aria-selected='false'] {
     color: var(--color-grey);
     border-color: transparent;
-  }
-
-  .underline {
-    height: 2px;
-    background-color: var(--color-nearly-black);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 74px;
-    border-radius: 2px;
-    z-index: -1;
-    transition: 9999s transform 0.2s ease-out;
-  }
-
-  button:nth-child(1)[aria-selected='true'] ~ .underline {
-    transform: translatex(0px);
-    transition: transform 0.2s ease-out;
-  }
-
-  button:nth-child(2)[aria-selected='true'] ~ .underline {
-    transform: translatex(90px);
-    transition: transform 0.2s ease-out;
-    width: 55px;
   }
 </style>

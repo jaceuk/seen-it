@@ -1,6 +1,6 @@
 export async function loadData(term: any, type: string) {
   const response = await fetch(
-    `https://api.themoviedb.orgx/3/search/${type}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${term}`,
+    `https://api.themoviedb.org/3/search/${type}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${term}`,
   );
   const data = await response.json();
 

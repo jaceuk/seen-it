@@ -10,7 +10,10 @@
     const movies = await loadData(params.term, 'movie');
 
     return {
-      props: { shows: shows.data, movies: movies.data },
+      props: {
+        shows: { data: shows.data, totalPages: shows.totalPages, totalResults: shows.totalResults },
+        movies: { data: movies.data, totalPages: movies.totalPages, totalResults: movies.totalResults },
+      },
     };
   }
 </script>
@@ -27,15 +30,15 @@
   <title>Search results</title>
 </svelte:head>
 
-<TabGroup>
+<TabGroup totalMovies={movies.totalResults} totalShows={shows.totalResults}>
   <div slot="shows">
-    {#each shows as show}
+    {#each shows.data as show}
       <CardHorizontal data={show} />
     {/each}
   </div>
 
   <div slot="movies">
-    {#each movies as movie}
+    {#each movies.data as movie}
       <CardHorizontal data={movie} />
     {/each}
   </div>

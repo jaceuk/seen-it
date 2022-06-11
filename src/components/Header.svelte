@@ -2,8 +2,6 @@
   import { page } from '$app/stores';
   import ProfileSVG from '$components/svgs/ProfileSVG.svelte';
   import SearchButton from '$components/SearchButton.svelte';
-
-  console.log($page);
 </script>
 
 <header>
