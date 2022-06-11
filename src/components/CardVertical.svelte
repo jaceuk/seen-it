@@ -4,8 +4,6 @@
 
   export let data: any;
 
-  console.log(data);
-
   let showDetails = false;
 
   function handleToggleDetails() {

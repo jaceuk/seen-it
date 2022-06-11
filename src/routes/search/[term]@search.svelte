@@ -1,48 +1,22 @@
-<script context="module" lang="ts">
-  interface ILoad {
-    fetch: any;
-    params: any;
-  }
-
-  export async function load({ fetch, params }: ILoad) {
-    try {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&query=${params.term}`,
-      );
-      const data = await response.json();
-      if (response.ok) {
-        return {
-          status: response.status,
-          props: { results: data.results },
-        };
-      } else {
-        return {
-          status: 500,
-        };
-      }
-    } catch (error) {
-      console.error(error);
-      return {
-        status: 500,
-      };
-    }
-  }
-</script>
-
 <script lang="ts">
-  import CardHorizontal from '$components/CardHorizontal.svelte';
-
-  export let results: any;
+  import TabGroup from '$components/TabGroup.svelte';
+  import SearchResults from '$components/SearchResults.svelte';
 </script>
 
 <svelte:head>
   <title>Search results</title>
 </svelte:head>
 
-{#if !results}
-  <p>Error</p>
-{:else}
-  {#each results as data}
-    <CardHorizontal {data} />
-  {/each}
-{/if}
+<TabGroup>
+  <div slot="shows">
+    <div class="results">
+      <SearchResults type="tv" />
+    </div>
+  </div>
+
+  <div slot="movies">
+    <div class="results">
+      <SearchResults type="movie" />
+    </div>
+  </div>
+</TabGroup>

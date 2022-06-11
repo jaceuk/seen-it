@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>The Seen Machine</title>
+  <title>Seen Machine</title>
 </svelte:head>
 
 <TabGroup>

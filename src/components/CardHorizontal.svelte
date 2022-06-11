@@ -11,13 +11,12 @@
   }
 </script>
 
-<button class="result" on:click={handleToggleDetails}>
-  <img
-    class="image"
-    src={data.poster_path ? `https://image.tmdb.org/t/p/w92/${data.poster_path}` : posterPlaceholder}
-    alt=""
-  />
-  <div class="title">{data.name || data.title}</div>
+<button class="card" on:click={handleToggleDetails}>
+  <img src={data.poster_path ? `https://image.tmdb.org/t/p/w92/${data.poster_path}` : posterPlaceholder} alt="" />
+  <div>
+    <h2 class="title">{data.name || data.title}</h2>
+    <div class="release-date">{data.release_date || data.first_air_date}</div>
+  </div>
 </button>
 
 {#if showDetails}
@@ -31,7 +30,7 @@
     padding: 0;
   }
 
-  .result {
+  .card {
     margin-bottom: var(--size-base);
     text-align: left;
     display: flex;
@@ -40,16 +39,13 @@
     width: 100%;
   }
 
-  .title {
-    margin: var(--size-small) var(--size-small) 0 var(--size-small);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
   img {
     border-radius: var(--border-radius-small);
     width: 92px;
+  }
+
+  .release-date {
+    color: var(--color-grey);
+    font-size: var(--font-size-small);
   }
 </style>
