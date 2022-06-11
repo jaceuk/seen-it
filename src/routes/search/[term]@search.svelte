@@ -1,6 +1,26 @@
+<script context="module" lang="ts">
+  import { loadData } from './loadData.json';
+  interface ILoad {
+    fetch: any;
+    params: any;
+  }
+
+  export async function load({ fetch, params }: ILoad) {
+    const shows = await loadData(params.term, 'tv');
+    const movies = await loadData(params.term, 'movie');
+
+    return {
+      props: { shows: shows.data, movies: movies.data },
+    };
+  }
+</script>
+
 <script lang="ts">
+  import CardHorizontal from '$components/CardHorizontal.svelte';
   import TabGroup from '$components/TabGroup.svelte';
-  import SearchResults from '$components/SearchResults.svelte';
+
+  export let shows: any;
+  export let movies: any;
 </script>
 
 <svelte:head>
@@ -9,14 +29,14 @@
 
 <TabGroup>
   <div slot="shows">
-    <div class="results">
-      <SearchResults type="tv" />
-    </div>
+    {#each shows as show}
+      <CardHorizontal data={show} />
+    {/each}
   </div>
 
   <div slot="movies">
-    <div class="results">
-      <SearchResults type="movie" />
-    </div>
+    {#each movies as movie}
+      <CardHorizontal data={movie} />
+    {/each}
   </div>
 </TabGroup>

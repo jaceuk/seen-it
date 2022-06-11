@@ -1,25 +1,37 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { onMount } from 'svelte';
   import ArrowLeft from '$components/svgs/ArrowLeft.svelte';
 
-  let searchTerm: string | undefined;
+  let searchTerm = '';
+  let inputRef: any;
 
   function handleBack() {
     window.history.back();
   }
 
   function handleSubmit() {
-    if (searchTerm !== undefined) {
-      goto(`/search/${searchTerm}`, { replaceState: true });
+    if (searchTerm !== undefined && searchTerm.length > 2) {
+      goto(`/search/${searchTerm}`, { replaceState: true, keepfocus: true });
     }
   }
+
+  onMount(() => {
+    inputRef.focus();
+  });
 </script>
 
 <header>
   <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeft /></button>
   <form on:submit|preventDefault={handleSubmit}>
     <label for="search" class="sr-only">Search</label>
-    <input id="search" type="text" bind:value={searchTerm} placeholder="Search TV shows & movies" />
+    <input
+      id="search"
+      type="text"
+      bind:value={searchTerm}
+      bind:this={inputRef}
+      placeholder="Search TV shows & movies"
+    />
     <button type="submit" class="sr-only">Search</button>
   </form>
 </header>

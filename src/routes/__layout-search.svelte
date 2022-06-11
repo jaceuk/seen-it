@@ -1,9 +1,9 @@
 <script>
-  import SearchHeader from '$components/SearchHeader.svelte';
+  import SearchForm from '$components/SearchForm.svelte';
 </script>
 
 <div class="wrapper">
-  <SearchHeader />
+  <SearchForm />
   <main>
     <slot />
   </main>
