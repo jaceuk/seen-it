@@ -1,4 +1,4 @@
-export async function fetchData(prevResults: any, term: any, type: string, page: number) {
+export async function fetchData(prevResults: any, term: string, type: string, page: number) {
   const response = await fetch(
     `https://api.themoviedb.org/3/search/${type}?api_key=${
       import.meta.env.VITE_TMDB_API_KEY

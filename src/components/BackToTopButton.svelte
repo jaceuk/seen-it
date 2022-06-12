@@ -24,7 +24,7 @@
   }
 </script>
 
-<button on:click={handleBackToTop} bind:this={buttonRef} aria-label="Back tp top"><ChevronUpSvg /></button>
+<button on:click={handleBackToTop} bind:this={buttonRef} aria-label="Back to top"><ChevronUpSvg /></button>
 
 <style>
   button {

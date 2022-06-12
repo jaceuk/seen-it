@@ -57,8 +57,7 @@
   <title>Search results</title>
 </svelte:head>
 
-<!-- TODO: add loading spinner -->
-<!-- TODO: add back to top button -->
+<!-- TODO: add loading spinner to anywhere that calls to an API -->
 
 <TabGroup totalMovies={movies.totalResults} totalShows={shows.totalResults}>
   <div slot="shows">
