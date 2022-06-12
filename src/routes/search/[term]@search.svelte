@@ -37,7 +37,7 @@
 
   async function getMoreMovies({ detail }: IProps) {
     isInView = detail.inView;
-    if (!isInView) return;
+    if (!isInView || page === movies.totalPages) return;
 
     page++;
     movies = await fetchData(movies.results, term, 'movie', page);
@@ -45,11 +45,10 @@
 
   async function getMoreShows({ detail }: IProps) {
     isInView = detail.inView;
-    if (!isInView) return;
+    if (!isInView || page === shows.totalPages) return;
 
     page++;
     shows = await fetchData(shows.results, term, 'tv', page);
-
     console.log(shows);
   }
 </script>
