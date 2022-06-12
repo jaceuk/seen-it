@@ -3,16 +3,11 @@
   export let totalMovies: number;
 
   let selectedTab = 1;
-  let showsTab: any;
-  let moviesTab: any;
-
-  console.log(showsTab);
 </script>
 
 <div role="tablist" aria-orientation="horizontal">
   <button
     on:click={() => (selectedTab = 1)}
-    bind:this={showsTab}
     role="tab"
     aria-selected={selectedTab === 1 ? 'true' : 'false'}
     id="tv-tab"
@@ -22,7 +17,6 @@
 
   <button
     on:click={() => (selectedTab = 2)}
-    bind:this={moviesTab}
     role="tab"
     aria-selected={selectedTab === 2 ? 'true' : 'false'}
     id="movies-tab"
