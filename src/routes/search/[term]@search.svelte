@@ -23,6 +23,7 @@
   import { inview } from 'svelte-inview';
   import CardHorizontal from '$components/CardHorizontal.svelte';
   import TabGroup from '$components/TabGroup.svelte';
+  import BackToTopButton from '$components/BackToTopButton.svelte';
 
   export let shows: any;
   export let movies: any;
@@ -49,13 +50,15 @@
 
     page++;
     shows = await fetchData(shows.results, term, 'tv', page);
-    console.log(shows);
   }
 </script>
 
 <svelte:head>
   <title>Search results</title>
 </svelte:head>
+
+<!-- TODO: add loading spinner -->
+<!-- TODO: add back to top button -->
 
 <TabGroup totalMovies={movies.totalResults} totalShows={shows.totalResults}>
   <div slot="shows">
@@ -80,6 +83,8 @@
     <div use:inview={{}} on:enter={getMoreMovies} />
   </div>
 </TabGroup>
+
+<BackToTopButton />
 
 <style>
   .term {

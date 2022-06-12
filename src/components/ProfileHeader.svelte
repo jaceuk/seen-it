@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ArrowLeft from '$components/svgs/ArrowLeft.svelte';
+  import ArrowLeftSVG from '$components/svgs/ArrowLeftSVG.svelte';
 
   function handleBack() {
     window.history.back();
@@ -7,7 +7,7 @@
 </script>
 
 <header>
-  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeft /></button>
+  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeftSVG /></button>
   <h1>Profile</h1>
 </header>
 

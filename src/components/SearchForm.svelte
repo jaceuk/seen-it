@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { onMount } from 'svelte';
-  import ArrowLeft from '$components/svgs/ArrowLeft.svelte';
+  import ArrowLeftSVG from '$components/svgs/ArrowLeftSVG.svelte';
 
   let searchTerm = '';
   let inputRef: any;
@@ -22,7 +22,7 @@
 </script>
 
 <header>
-  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeft /></button>
+  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeftSVG /></button>
   <form on:submit|preventDefault={handleSubmit}>
     <label for="search" class="sr-only">Search</label>
     <input

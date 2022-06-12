@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import Overlay from '$components/Overlay.svelte';
-  import ArrowLeft from '$components/svgs/ArrowLeft.svelte';
+  import ArrowLeftSVG from '$components/svgs/ArrowLeftSVG.svelte';
   import backdropPlaceholder from '$images/backdropPlaceholder.png';
 
   export let data: any;
@@ -14,7 +14,7 @@
 </script>
 
 <Overlay>
-  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeft /></button>
+  <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeftSVG /></button>
   <div class="backdrop">
     <img
       class="image"
