@@ -16,6 +16,7 @@ const config = {
       resolve: {
         alias: {
           // these are the aliases and paths to them
+          $styles: path.resolve('./src/styles'),
           $images: path.resolve('./src/images'),
           $data: path.resolve('./src/data'),
           $components: path.resolve('./src/components'),

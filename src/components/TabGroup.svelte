@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let totalShows: number;
-  export let totalMovies: number;
+  export let totalShows = 0;
+  export let totalMovies = 0;
 
   let selectedTab = 1;
 </script>

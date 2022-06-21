@@ -51,10 +51,9 @@
 
   input {
     width: 100%;
-    background: #ffffff;
-    box-shadow: 0px 0px var(--size-small) rgba(0, 0, 0, 0.15);
+    background-color: var(--color-white);
     border-radius: var(--border-radius-small);
-    border: none;
+    border: 1px solid var(--color-grey);
     padding: var(--size-small) var(--size-base);
   }
 

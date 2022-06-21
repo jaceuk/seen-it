@@ -7,7 +7,7 @@
 <header>
   <div class="navbar">
     <h1>
-      {#if $page.url.pathname === '/' || $page.status === 404}Seen Machine{/if}
+      {#if $page.url.pathname === '/home' || $page.status === 404}Seen Machine{/if}
       {#if $page.url.pathname === '/watched'}Watched{/if}
       {#if $page.url.pathname === '/watch-list'}Watch list{/if}
       {#if $page.url.pathname === '/recommended'}Recommended{/if}

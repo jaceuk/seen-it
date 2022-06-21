@@ -8,7 +8,7 @@
 
 <footer>
   <nav>
-    <a class:active={$page.url.pathname === '/'} href="/">
+    <a class:active={$page.url.pathname === '/home'} href="/home">
       <HomeSVG />
     </a>
     <a class:active={$page.url.pathname === '/watched'} href="/watched">
