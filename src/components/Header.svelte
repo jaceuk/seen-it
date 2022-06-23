@@ -2,16 +2,13 @@
   import { page } from '$app/stores';
   import ProfileSVG from '$components/svgs/ProfileSVG.svelte';
   import SearchButton from '$components/SearchButton.svelte';
+
+  export let pageTitle: string;
 </script>
 
 <header>
   <div class="navbar">
-    <h1>
-      {#if $page.url.pathname === '/home' || $page.status === 404}Seen Machine{/if}
-      {#if $page.url.pathname === '/watched'}Watched{/if}
-      {#if $page.url.pathname === '/watch-list'}Watch list{/if}
-      {#if $page.url.pathname === '/recommended'}Recommended{/if}
-    </h1>
+    <h1>{pageTitle}</h1>
 
     <a class="profile" href="/profile">
       <ProfileSVG />
