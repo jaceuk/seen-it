@@ -8,6 +8,8 @@
 <div class="container">
   <h1>Seen Machine</h1>
   <a href="/home">home</a>
+  <a href="/account/login">login</a>
+  <a href="/account/create">create</a>
 </div>
 
 <style>

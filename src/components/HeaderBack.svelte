@@ -8,7 +8,7 @@
 
 <header>
   <button class="back-button" on:click={handleBack} aria-label="Back"><ArrowLeftSVG /></button>
-  <h1>Profile</h1>
+  <slot />
 </header>
 
 <style>
@@ -26,10 +26,5 @@
     border: none;
     display: flex;
     padding: var(--size-small);
-  }
-
-  h1 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-nearly-black);
   }
 </style>

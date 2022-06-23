@@ -59,7 +59,7 @@
 
 <!-- TODO: add loading spinner to anywhere that calls to an API -->
 
-<TabGroup totalMovies={movies.totalResults} totalShows={shows.totalResults}>
+<TabGroup totalMovies={movies.totalResults} totalShows={shows.totalResults} slot="main">
   <div slot="shows">
     {#if shows.results.length > 0}
       {#each shows.results as result}

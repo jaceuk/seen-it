@@ -7,6 +7,13 @@ button {
   cursor: pointer;
 }
 
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+}
+
 .inner {
   max-width: var(--size-max-width);
   margin: 0 auto;

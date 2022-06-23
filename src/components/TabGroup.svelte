@@ -57,7 +57,7 @@
     display: flex;
     align-items: center;
     gap: var(--size-extra-small);
-    border-bottom: 2px solid var(--color-nearly-black);
+    border-bottom: 2px solid var(--color-red);
   }
 
   button[aria-selected='false'] {
