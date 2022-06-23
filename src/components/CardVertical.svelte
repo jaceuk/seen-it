@@ -15,6 +15,7 @@
   <img
     class="image"
     src={data.poster_path ? `https://image.tmdb.org/t/p/w154/${data.poster_path}` : posterPlaceholder}
+    loading="lazy"
     alt=""
   />
   <div class="title">{data.name || data.title}</div>

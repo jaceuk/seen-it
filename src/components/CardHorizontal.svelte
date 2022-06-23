@@ -12,7 +12,11 @@
 </script>
 
 <button class="card" on:click={handleToggleDetails}>
-  <img src={data.poster_path ? `https://image.tmdb.org/t/p/w92/${data.poster_path}` : posterPlaceholder} alt="" />
+  <img
+    src={data.poster_path ? `https://image.tmdb.org/t/p/w92/${data.poster_path}` : posterPlaceholder}
+    loading="lazy"
+    alt=""
+  />
   <div>
     <h2 class="title">{data.name || data.title}</h2>
     <div class="release-date">{data.release_date || data.first_air_date}</div>

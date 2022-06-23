@@ -19,6 +19,7 @@
     <img
       class="image"
       src={data.backdrop_path ? `https://image.tmdb.org/t/p/w400/${data.backdrop_path}` : backdropPlaceholder}
+      loading="lazy"
       alt=""
     />
   </div>

@@ -1,13 +1,13 @@
 <script lang="ts">
   import { browser } from '$app/env';
+  import { onDestroy } from 'svelte';
   import ChevronUpSvg from '$components/svgs/ChevronUpSvg.svelte';
 
   let buttonRef: any;
 
   if (browser) {
-    window.onscroll = function () {
-      scrollFunction();
-    };
+    window.addEventListener('scroll', scrollFunction);
+    onDestroy(() => window.removeEventListener('scroll', scrollFunction));
   }
 
   function scrollFunction() {
