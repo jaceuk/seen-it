@@ -8,7 +8,8 @@
 
 <style>
   .overlay {
-    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     height: 100%;
     position: fixed;
     background: var(--color-white);
