@@ -25,7 +25,7 @@
   <DetailsOverlay on:close={handleToggleDetails} {data} />
 {/if}
 
-<style>
+<style lang="scss">
   button {
     background: none;
     border: none;
@@ -33,10 +33,20 @@
   }
 
   .result {
-    min-width: 150px;
-    width: 150px;
+    min-width: 40vw;
+    width: 40vw;
     margin-bottom: var(--size-base);
     text-align: left;
+
+    @media (min-width: 500px) {
+      min-width: 20vw;
+      width: 20vw;
+    }
+
+    @media (min-width: 821px) {
+      min-width: 150px;
+      width: 150px;
+    }
   }
 
   .title {
@@ -49,5 +59,6 @@
 
   img {
     border-radius: var(--border-radius-small);
+    width: 100%;
   }
 </style>
