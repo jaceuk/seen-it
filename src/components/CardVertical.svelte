@@ -36,7 +36,11 @@
     min-width: 40vw;
     width: 40vw;
     margin-bottom: var(--size-base);
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--card-box-shadow);
+    border-radius: var(--border-radius-small);
 
     @media (min-width: 500px) {
       min-width: 20vw;
@@ -50,15 +54,16 @@
   }
 
   .title {
-    margin: var(--size-small) var(--size-small) 0 var(--size-small);
+    margin: var(--size-base) var(--size-small);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-weight: var(--font-weight-semi-bold);
   }
 
   img {
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
     width: 100%;
   }
 </style>

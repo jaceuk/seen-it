@@ -42,4 +42,12 @@
   /* transitions */
   --transition-fast: all 0.2s ease-in-out;
   --transition-base: all 0.8s ease-in-out;
+
+  /* misc */
+  --nav-background: var(--color-white-80);
+  --header-bottom-background: var(--color-white-60);
+  --card-box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+  --button-box-shadow: 0 0 4px rgb(0 0 0 / 25%);
+  --header-box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  --footer-box-shadow: 0 -4px 4px rgb(0 0 0 / 25%);
 }
